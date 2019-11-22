@@ -1,6 +1,4 @@
-framework module CustomParse {
-  umbrella header "Parse.h"
-
-  export *
-  module * { export * }
+module CustomParse {
+    header "Parse.h"
+    export *
 }

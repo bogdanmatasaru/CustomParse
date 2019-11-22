@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  CustomParse
+//
+//  Created by Bogdan Matasaru on 22/11/2019.
+//  Copyright © 2019 Tapsty. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SWIFT_INCLUDE_PATHS = $(SRCROOT)/CustomParse/
+MODULEMAP_PRIVATE_FILE = $(SRCROOT)/CustomParse/module.modulemap
