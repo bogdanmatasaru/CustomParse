@@ -359,6 +359,7 @@
 		2285880023321D8000EF44E6 /* PFSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 228586A123321D8000EF44E6 /* PFSession.m */; };
 		2285880123321D8000EF44E6 /* PFCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 228586A223321D8000EF44E6 /* PFCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2285880323321D8900EF44E6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2285880223321D8800EF44E6 /* Bolts.framework */; };
+		22B891982388633F005D0851 /* CustomParse.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 22B891972388633F005D0851 /* CustomParse.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -716,6 +717,8 @@
 		228586A123321D8000EF44E6 /* PFSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSession.m; sourceTree = "<group>"; };
 		228586A223321D8000EF44E6 /* PFCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCloud.h; sourceTree = "<group>"; };
 		2285880223321D8800EF44E6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		22B89196238862B5005D0851 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		22B891972388633F005D0851 /* CustomParse.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CustomParse.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -796,6 +799,8 @@
 				2285869A23321D7F00EF44E6 /* PFUserAuthenticationDelegate.h */,
 				2285869D23321D7F00EF44E6 /* Resources */,
 				228581D123321CD800EF44E6 /* Info.plist */,
+				22B89196238862B5005D0851 /* module.modulemap */,
+				22B891972388633F005D0851 /* CustomParse.xcconfig */,
 			);
 			path = CustomParse;
 			sourceTree = "<group>";
@@ -2061,6 +2066,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228587FE23321D8000EF44E6 /* Parse.strings in Resources */,
+				22B891982388633F005D0851 /* CustomParse.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
