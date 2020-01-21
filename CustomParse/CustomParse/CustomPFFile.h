@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  `PFFile` representes a file of binary data stored on the Parse servers.
  This can be a image, video, or anything else that an application needs to reference in a non-relational way.
  */
-@interface PFFile : NSObject
+@interface CustomPFFile : NSObject
 
 ///--------------------------------------
 /// @name Creating a PFFile

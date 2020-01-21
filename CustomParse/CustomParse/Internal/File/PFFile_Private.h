@@ -10,13 +10,13 @@
 #import <Foundation/Foundation.h>
 
 #import "PFConstants.h"
-#import "PFFile.h"
+#import "CustomPFFile.h"
 
 #import "PFFileState.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PFFile (Private)
+@interface CustomPFFile (Private)
 
 @property (nonatomic, strong, readonly) PFFileState *state;
 

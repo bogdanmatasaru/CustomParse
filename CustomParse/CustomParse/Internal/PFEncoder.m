@@ -46,8 +46,8 @@
                  @"iso" : [[PFDateFormatter sharedFormatter] preciseStringFromDate:object]
                  };
 
-    } else if ([object isKindOfClass:[PFFile class]]) {
-        if (((PFFile *)object).dirty) {
+    } else if ([object isKindOfClass:[CustomPFFile class]]) {
+        if (((CustomPFFile *)object).dirty) {
             // TODO: (nlutsenko) Figure out what to do with things like an unsaved file
             // in a mutable container, where we don't normally want to allow serializing
             // such a thing inside an object.
@@ -62,8 +62,8 @@
         }
         return @{
                  @"__type" : @"File",
-                 @"url" : ((PFFile *)object).state.urlString,
-                 @"name" : ((PFFile *)object).name
+                 @"url" : ((CustomPFFile *)object).state.urlString,
+                 @"name" : ((CustomPFFile *)object).name
                  };
 
     } else if ([object isKindOfClass:[PFFieldOperation class]]) {

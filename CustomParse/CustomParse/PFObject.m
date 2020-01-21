@@ -67,7 +67,7 @@ static void PFObjectAssertValueIsKindOfValidClass(id object) {
     dispatch_once(&onceToken, ^{
         classes = @[ [NSDictionary class], [NSArray class],
                      [NSString class], [NSNumber class], [NSNull class], [NSDate class], [NSData class],
-                     [PFObject class], [PFFile class], [PFACL class], [PFGeoPoint class] ];
+                     [PFObject class], [CustomPFFile class], [PFACL class], [PFGeoPoint class] ];
     });
 
     for (Class class in classes) {
@@ -280,8 +280,8 @@ static void PFObjectAssertValueIsKindOfValidClass(id object) {
         if ([object isDirty:NO]) {
             [dirtyChildren addObject:object];
         }
-    } else if ([node isKindOfClass:[PFFile class]]) {
-        PFFile *file = (PFFile *)node;
+    } else if ([node isKindOfClass:[CustomPFFile class]]) {
+        CustomPFFile *file = (CustomPFFile *)node;
         if (!file.url) {
             [dirtyFiles addObject:node];
         }
@@ -383,7 +383,7 @@ static void PFObjectAssertValueIsKindOfValidClass(id object) {
     NSMutableSet *uniqueObjects = [NSMutableSet set];
     NSMutableSet *uniqueFiles = [NSMutableSet set];
     [self collectDirtyChildren:object children:uniqueObjects files:uniqueFiles currentUser:currentUser];
-    for (PFFile *file in uniqueFiles) {
+    for (CustomPFFile *file in uniqueFiles) {
         task = [task continueAsyncWithSuccessBlock:^id(BFTask *task) {
             return [[file saveInBackground] continueAsyncWithBlock:^id(BFTask *task) {
                 // This is a stupid hack because our current behavior is to fail file
@@ -542,7 +542,7 @@ static void PFObjectAssertValueIsKindOfValidClass(id object) {
         NSMutableSet *uniqueObjects = [NSMutableSet set];
         NSMutableSet *uniqueFiles = [NSMutableSet set];
         [self collectDirtyChildren:object children:uniqueObjects files:uniqueFiles currentUser:currentUser];
-        for (PFFile *file in uniqueFiles) {
+        for (CustomPFFile *file in uniqueFiles) {
             if (!file.url) {
                 NSError *error = [PFErrorUtilities errorWithCode:kPFErrorUnsavedFile
                                                          message:@"Unable to saveEventually a PFObject with a relation to a new, unsaved PFFileObject."];

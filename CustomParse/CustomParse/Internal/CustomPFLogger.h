@@ -13,7 +13,7 @@
 
 typedef uint8_t PFLoggingTag;
 
-@interface PFLogger : NSObject
+@interface CustomPFLogger : NSObject
 
 @property (atomic, assign) PFLogLevel logLevel;
 

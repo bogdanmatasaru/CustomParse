@@ -471,9 +471,9 @@ static NSString *const _ParseApplicationIdFileName = @"applicationId";
                                          toDirectoryAtPath:dataPath
                                                   executor:[BFExecutor immediateExecutor]] waitForResult:&error];
         if (error) {
-            PFLogError(PFLoggingTagCommon,
-                       @"Failed to migrate local sandbox data to shared container with error %@",
-                       [error localizedDescription]);
+//            PFLogError(PFLoggingTagCommon,
+//                       @"Failed to migrate local sandbox data to shared container with error %@",
+//                       [error localizedDescription]);
         } else {
             [[PFFileManager removeItemAtPathAsync:localSandboxDataPath withFileLock:NO] waitForResult:nil];
         }

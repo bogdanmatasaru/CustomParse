@@ -17,7 +17,7 @@
 #import "PFPin.h"
 #import "PFPinningEventuallyQueue.h"
 #import "PFUserPrivate.h"
-#import "PFLogger.h"
+#import "CustomPFLogger.h"
 #import "PFSession.h"
 #import "PFFileManager.h"
 #import "PFApplication.h"
@@ -185,11 +185,11 @@ static NSString *containingApplicationBundleIdentifier_;
 ///--------------------------------------
 
 + (void)setLogLevel:(PFLogLevel)logLevel {
-    [PFLogger sharedLogger].logLevel = logLevel;
+    [CustomPFLogger sharedLogger].logLevel = logLevel;
 }
 
 + (PFLogLevel)logLevel {
-    return [PFLogger sharedLogger].logLevel;
+    return [CustomPFLogger sharedLogger].logLevel;
 }
 
 ///--------------------------------------

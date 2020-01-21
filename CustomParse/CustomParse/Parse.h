@@ -15,7 +15,7 @@
 #import "PFCloud.h"
 #import "PFConfig.h"
 #import "PFConstants.h"
-#import "PFFile.h"
+#import "CustomPFFile.h"
 #import "PFGeoPoint.h"
 #import "PFObject+Subclass.h"
 #import "PFObject.h"

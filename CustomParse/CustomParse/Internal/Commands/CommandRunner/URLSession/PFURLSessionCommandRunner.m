@@ -254,7 +254,7 @@
 
 - (void)urlSession:(PFURLSession *)session willPerformURLRequest:(NSURLRequest *)request {
     [[BFExecutor defaultPriorityBackgroundExecutor] execute:^{
-        NSDictionary *userInfo = ([PFLogger sharedLogger].logLevel == PFLogLevelDebug ?
+        NSDictionary *userInfo = ([CustomPFLogger sharedLogger].logLevel == PFLogLevelDebug ?
                                   @{ PFNetworkNotificationURLRequestUserInfoKey : request } : nil);
         [self.notificationCenter postNotificationName:PFNetworkWillSendURLRequestNotification
                                                object:self
@@ -268,7 +268,7 @@ didPerformURLRequest:(NSURLRequest *)request
     responseString:(nullable NSString *)responseString {
     [[BFExecutor defaultPriorityBackgroundExecutor] execute:^{
         NSMutableDictionary *userInfo = nil;
-        if ([PFLogger sharedLogger].logLevel == PFLogLevelDebug) {
+        if ([CustomPFLogger sharedLogger].logLevel == PFLogLevelDebug) {
             userInfo = [NSMutableDictionary dictionaryWithObject:request
                                                           forKey:PFNetworkNotificationURLRequestUserInfoKey];
             if (response) {

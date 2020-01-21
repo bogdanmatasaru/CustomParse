@@ -7,12 +7,12 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import "PFLogger.h"
+#import "CustomPFLogger.h"
 
 #import "PFApplication.h"
 #import "PFLogging.h"
 
-@implementation PFLogger
+@implementation CustomPFLogger
 
 ///--------------------------------------
 #pragma mark - Class
@@ -58,10 +58,10 @@
 ///--------------------------------------
 
 + (instancetype)sharedLogger {
-    static PFLogger *logger;
+    static CustomPFLogger *logger;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        logger = [[PFLogger alloc] init];
+        logger = [[CustomPFLogger alloc] init];
     });
     return logger;
 }

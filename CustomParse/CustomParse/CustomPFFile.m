@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import "PFFile.h"
+#import "CustomPFFile.h"
 #import "PFFile_Private.h"
 
 #import <Bolts/BFCancellationTokenSource.h>
@@ -31,7 +31,7 @@
 
 static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
 
-@interface PFFile () {
+@interface CustomPFFile () {
     dispatch_queue_t _synchronizationQueue;
 }
 
@@ -45,7 +45,7 @@ static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
 
 @end
 
-@implementation PFFile
+@implementation CustomPFFile
 
 @synthesize stagedFilePath = _stagedFilePath;
 
@@ -65,7 +65,7 @@ static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
 
 + (instancetype)fileWithName:(NSString *)name contentsAtPath:(NSString *)path {
     NSError *error = nil;
-    PFFile *file = [self fileWithName:name contentsAtPath:path error:&error];
+    CustomPFFile *file = [self fileWithName:name contentsAtPath:path error:&error];
     PFParameterAssert(!error, @"Could not access file at %@: %@", path, error);
     return file;
 }
@@ -97,7 +97,7 @@ static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
         return nil;
     }
 
-    PFFile *file = [self fileWithName:name url:nil];
+    CustomPFFile *file = [self fileWithName:name url:nil];
     if (![file _stageWithPath:path error:error]) {
         return nil;
     }
@@ -108,7 +108,7 @@ static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
                         data:(NSData *)data
                  contentType:(NSString *)contentType {
     NSError *error = nil;
-    PFFile *file = [self fileWithName:name data:data contentType:contentType error:&error];
+    CustomPFFile *file = [self fileWithName:name data:data contentType:contentType error:&error];
     PFConsistencyAssert(!error, @"Could not save file data for %@ : %@", name, error);
     return file;
 }
@@ -138,7 +138,7 @@ static const unsigned long long PFFileMaxFileSize = 10 * 1024 * 1024; // 10 MB
         return nil;
     }
 
-    PFFile *file = [[self alloc] initWithName:name urlString:nil mimeType:contentType];
+    CustomPFFile *file = [[self alloc] initWithName:name urlString:nil mimeType:contentType];
     if (![file _stageWithData:data error:error]) {
         return nil;
     }
