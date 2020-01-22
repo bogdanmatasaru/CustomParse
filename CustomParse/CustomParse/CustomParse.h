@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Parse.h"
 
 //! Project version number for CustomParse.
 FOUNDATION_EXPORT double CustomParseVersionNumber;
