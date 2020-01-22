@@ -1,4 +1,0 @@
-module CustomParse {
-    header "Parse.h"
-    export *
-}
