@@ -345,10 +345,10 @@ static NSSet *protectedKeys;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         serverMap = @{
-            @"com.danteinternational.eMAG": @"https://push.emag.ro/1",
-            @"hu.danteinternational.eMAG": @"https://push.emag.hu/1",
-            @"bg.danteinternational.eMAG": @"https://push.emag.bg/1",
-            @"pl.danteinternational.eMAG": @"https://push.emag.pl/1"
+            @"com.danteinternational.eMAG": @"https://push2.emag.ro/1",
+            @"hu.danteinternational.eMAG": @"https://push2.emag.hu/1",
+            @"bg.danteinternational.eMAG": @"https://push2.emag.bg/1",
+            @"pl.danteinternational.eMAG": @"https://push2.emag.pl/1"
         };
     });
     NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
